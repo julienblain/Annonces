@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes annonces{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Les annonces</h1>
+</div>
+
+<div class="row">
+    {% for annonce in annonces %}
+    <div class="col-md-4" style="border:2px, solid, white;">
+        <div class="card-header text-uppercase text-center">
+            {{annonce.title}}
+        </div>
+
+        <img src="{{annonce.photo}}" style="height: 300px; width:300px; display:block;" alt="" class="rounded mx-auto d-block" >
+        <div class="card">
+            <h2 class="text-center">{{annonce.prix}} $</h2>
+            <p class="text-justify p-3">{{annonce.description}}</p>
+            <a href="{{ path('showOne', {'id': annonce.id}) }}" class="btn btn-primary">plus d'info</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Les annonces</h1>
+    <div class="row">
+    
+        <div class="col-md-4">
+            <div class="card-header text-uppercase text-center">
+                {{annonce.title}}
+            </div>
+
+            <img src="{{annonce.photo}}" style="height: 300px; width:300px; display:block;" alt="" class="rounded mx-auto d-block" >
+            <div class="card">
+                <h2 class="text-center">{{annonce.prix}} $</h2>
+                <p>{{annonce.description}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
