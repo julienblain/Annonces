@@ -20,8 +20,27 @@ class AnnoncesController extends AbstractController
         );
     }
 
+    /*
+     * @Route("/new", name="new")
+   
+    public function newAnnonce() {
+           $annonce = new Annonces();
+           
+           $form= $this->createFormBuilder($annonce)
+           ->add('title')
+           ->add('prix', IntegerType::class)
+           ->add('description', TextareaType::class)
+           ->add('photo', UrlType::class)
+           ->getForm();
+
+
+        return $this->render('annonces/new.html.twig', [
+            'form' => $form->createView()
+        ]); 
+    } */
+
     /**
-     * @Route("annonce/{id}", name="showOne")
+     * @Route("/annonce/{id}", name="showOne")
      */
     public function showOne($id) {
         $repo = $this->getDoctrine()->getRepository(Annonces::class);
@@ -29,4 +48,6 @@ class AnnoncesController extends AbstractController
         return $this->render('annonces/show.html.twig', 
         ['annonce' => $annonce]);
     }
+
+    
 }

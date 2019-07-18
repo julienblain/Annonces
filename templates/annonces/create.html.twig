@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if notif == 1 %}
+
+<p class="alert alert-success d-inline ml-5 notifyAnim" role="alert">
+        L'annonce a bien été crée
+</p>
+{% endif %}
+
+
+<div class="container pt-5">
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.prix) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.photo) }}
+
+        <button type="submit" class="btn btn-primary">Créer</button>
+    {{ form_end(form) }}
+</div>
+
+
+        
+{% endblock %}

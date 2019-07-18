@@ -1,0 +1,13 @@
+.notifyAnim {
+    animation:  3s notifyInvisible 3s linear forwards;
+}
+
+@keyframes notifyInvisible {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+
+}
